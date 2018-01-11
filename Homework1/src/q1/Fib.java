@@ -18,7 +18,6 @@ public class Fib {
     // use instance variables that store F(0) and F(1).
     // check parameter and throw exception if n < 0. Don't worry about arithmetic overflow.
     public int f(int n) {
-
         return 0;
     }
 
@@ -27,7 +26,10 @@ public class Fib {
     // use instance variables that store F(0) and F(1).
     // check parameter and throw exception if n < 0. Don't worry about arithmetic overflow.
     public int fRec(int n) {
-        return 0;
+        if(n<=2)
+            return 1;
+        else
+            return fRec(n-1) + fRec(n-2);
     }
 
 
@@ -38,7 +40,7 @@ public class Fib {
         // you must handle possible exceptions !
         // get n from args[2]:
 
-        int n = 0;
+        int n;
 
         Scanner in = new Scanner(System.in);
 
