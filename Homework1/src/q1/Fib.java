@@ -29,11 +29,26 @@ public class Fib {
      */
     public int f(int n)
     {
-        int result = 1;
-        for(int i=2; i<n; i++){
-            result *= i;
+        System.out.println("Iterative algorithm: ");
+        System.out.println("F(0): " + F0);
+        System.out.println("F(1): " + F1);
+
+        if(n==2){
+            return F0 + F1;
         }
-        return result;
+
+        int previous1 = F0;
+        int previous2 = F1;
+        int current;
+
+        for(int i=2; i<n; i++){
+            current = previous1 + previous2;
+            System.out.println("F(" + i + "): " + current);
+            previous1 = previous2;
+            previous2 = current;
+
+        }
+        return previous1 + previous2;
     }
 
     /**
@@ -87,18 +102,15 @@ public class Fib {
         // calculate F(0), ..., F(n) and display them with System.out.println(...) using
         // the iterative methods f(i)
 
-        System.out.println(F0 + " " + F1);
-        System.out.println("Using iterative method - F(" + F0 + "): " + fibObject.f(F0));
-        System.out.println("Using iterative method - F(" + F1 + "): " + fibObject.f(F1));
-        System.out.println("Using iterative method - n: " + fibObject.f(n));
+        System.out.println("F(" + n + "): " + fibObject.f(n));
 
 
         // calculate F(0), ..., F(n) and display them with System.out.println(...) using
         // the recursive methods fRec(i)
-        System.out.println(F0 + " " + F1);
-        System.out.println("Using recursive method - F(" + F0 + "): " + fibObject.f(F0));
-        System.out.println("Using recursive method - F(" + F1 + "): " + fibObject.f(F1));
-        System.out.println("Using recursive method - n: " + fibObject.fRec(n));
+//        System.out.println(F0 + " " + F1);
+//        System.out.println("Using recursive method - F(" + F0 + "): " + fibObject.f(F0));
+//        System.out.println("Using recursive method - F(" + F1 + "): " + fibObject.f(F1));
+//        System.out.println("Using recursive method - n: " + fibObject.fRec(n));
     }
 
     // instance variables store F(0) and F(1):
