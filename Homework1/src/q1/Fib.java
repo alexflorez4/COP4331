@@ -11,7 +11,8 @@ import java.util.Set;
  * @version 1.0
  * @since 01/16/18
  */
-public class Fib {
+public class Fib
+{
 
     /**
      * Constructor of the Fib class.
@@ -35,7 +36,8 @@ public class Fib {
         System.out.println("F(0): " + F0);
         System.out.println("F(1): " + F1);
 
-        if(n==2){
+        if(n==2)
+        {
             return F0 + F1;
         }
 
@@ -43,7 +45,8 @@ public class Fib {
         int previous2 = F1;
         int current;
 
-        for(int i=2; i<n; i++){
+        for(int i=2; i<n; i++)
+        {
             current = previous1 + previous2;
             System.out.println("F(" + i + "): " + current);
             previous1 = previous2;
@@ -58,7 +61,8 @@ public class Fib {
      * @param n number to be calculated.
      * @return fibonacci number of n
      */
-    public int fRec(int n) {
+    public int fRec(int n)
+    {
 
         if(n==0)
         {
