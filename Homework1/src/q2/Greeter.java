@@ -1,64 +1,80 @@
 package q2;
 
-public class Greeter{
-
-    public Greeter(String s)
-    {
-    }
-
-    public static void main(String[] args) {
-
-
-        int x = 0;
-        try {
-            Greeter g1 = new Greeter("Alice");
-            Greeter g2 = new Greeter("Alice");
-
-            if (g1.sayHello() != g2.sayHello()) {
-                g2 = null;
-                System.out.println("q2 is null");
-            }
-            x = 1;
-            System.out.println(g2.sayHello());
-            x = 2;
-        } catch (NullPointerException ex) {
-            x++;
-        } catch (RuntimeException ex) {
-            x = 4;
-        } finally {
-            x++;
-            System.out.println(x);
-        }
-    }
-
-    private String sayHello() {
-               return new String("Hey");
-    }
-}
-
-
-/*
- a. Write a new method for the Greeter class,
-
-	 public void swapNames(Greeter other) {...}
-
-that swaps the names of this greeter and another instance.
-
-
-b. write a new method for the Greeter class:
-   	public Greeter createQualifiedGreeter(String qualifier) { ..... }
-that returns a new Greeter object with its name being the qualifier string followed by
-" " and the executing greeter's name (i.e. this.name).
-For example:
-	Greeter g = new Greeter("world");
-	Greeter g2 = g.createQualifiedGreeter("beautiful");
-
-g2.name will be the string "beautiful world"
-
-c. Write a GreeterTester class that shows how the swapNames() and the createQualifiedGreeter()
-methods are used.
-
-
-Write javadoc comments.
-Include both java files in your solution document.
+/**
+ A class for producing simple greetings. (Revised to include sayGoodbye)
  */
+public class Greeter
+{
+    /**
+     Constructs a Greeter object that can greet a person or
+     entity.
+     @param aName the name of the person or entity who should
+     be addressed in the greetings.
+     */
+    public Greeter(String aName)
+    {
+        name = aName;
+    }
+
+    /**
+     Greet with a "Goodbye" message.
+     @return a message containing "Goodbye" and the name of
+     the greeted person or entity.
+     */
+    public String sayGoodbye()
+    {
+        return "Goodbye, " + name + "!";
+    }
+
+    /**
+     Greet with a "Hello" message.
+     @return a message containing "Hello" and the name of
+     the greeted person or entity.
+     */
+    public String sayHello()
+    {
+        return "Hello, " + name + "!";
+    }
+
+    /**
+     * This method swaps the names of this greeter and another instance.
+     * @param other Instance of another Greeter class.
+     */
+    public void swapNames(Greeter other)
+    {
+        String temp = this.getName();
+        this.setName(other.getName());
+        other.setName(temp);
+    }
+
+    /**
+     * This method returns an object build with the current object name concatenated with a String qualifier
+     * @param qualifier String to build the new object name
+     * @return New Greeter object
+     */
+    public Greeter createQualifiedGreeter(String qualifier)
+    {
+        return new Greeter(qualifier + " " + this.name);
+    }
+
+    /**
+     * Getter for current object name
+     * @return String with object name
+     */
+    public String getName()
+    {
+        return name;
+    }
+
+    /**
+     * Setter for current object name
+     * @param name String for setting object name
+     */
+
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+
+    private String name;
+}

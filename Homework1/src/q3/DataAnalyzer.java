@@ -1,5 +1,7 @@
 package q3;
 
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
@@ -29,19 +31,48 @@ import java.util.LinkedList;
  */
 public class DataAnalyzer {
 
+    private LinkedList<Integer> inputNumbers;
+
     public DataAnalyzer(LinkedList<Integer> numList) {
+        inputNumbers = numList;
     }
 
-    public static void main(String[] args) {
-
+    public int min()
+    {
+        Iterator it = inputNumbers.iterator();
+        int min = inputNumbers.getFirst();
+        while (it.hasNext())
+        {
+            int nextNum = (int) it.next();
+            if(nextNum < min){
+                min = nextNum;
+            }
+        }
+        return min;
     }
-    public int min(){
-        return 0;
+    public int max()
+    {
+        Iterator it = inputNumbers.iterator();
+        int max = inputNumbers.getFirst();
+        while (it.hasNext())
+        {
+            int nextNum = (int) it.next();
+            if(nextNum > max){
+                max = nextNum;
+            }
+        }
+        return max;
     }
-    public int max(){
-        return 0;
-    }
-    public int average(){
-        return 0;
+    public int average()
+    {
+        int sum = 0;
+        int iter = 0;
+        Iterator it = inputNumbers.iterator();
+        while (it.hasNext())
+        {
+            sum += (int) it.next();
+            iter ++;
+        }
+        return sum/iter;
     }
 }
