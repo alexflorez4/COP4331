@@ -63,10 +63,10 @@ public class DataAnalyzer {
         }
         return max;
     }
-    public int average()
+    public float average()
     {
-        int sum = 0;
-        int iter = 0;
+        float sum = 0;
+        float iter = 0;
         Iterator it = inputNumbers.iterator();
         while (it.hasNext())
         {

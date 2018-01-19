@@ -14,12 +14,16 @@ public class DataAnalyzerTester
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
 
-        String numbers [] = input.trim().split("\\s+");
+        System.out.println("Enter File name: ");
+        String fileName = scanner.nextLine() + ".txt";
 
+        String numbers [] = input.trim().split("\\s+");
+        System.out.println("Numbers entered: ");
         for(int i=0; i<numbers.length; i++)
         {
             try {
                 linkedList.add(Integer.parseInt(numbers[i]));
+                System.out.print(numbers[i] + " ");
             }catch (NumberFormatException ne){
                 throw new Exception("Only integers are valid input.");
             }
@@ -28,12 +32,10 @@ public class DataAnalyzerTester
         DataAnalyzer da = new DataAnalyzer(linkedList);
         int min = da.min();
         int max = da.max();
-        int average = da.average();
+        float average = da.average();
 
-        System.out.println(min + " " + max + " " + average);
-        //System.out.println("Enter File name: ");
-        //String fileName = scanner.nextLine() + ".txt";
-        //System.out.println(fileName);
+        System.out.println("\nMin " + min + "\nMax: " + max + "\nAverage: " + average);
+
 
 
     }
