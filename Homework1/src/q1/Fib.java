@@ -6,7 +6,8 @@ import java.util.Scanner;
 import java.util.Set;
 
 /**
- * Fibonacci class
+ * Fibonacci class.  Calculates the fibonacci number using
+ * either recursion or iteration.
  * @author Alexander Florez
  * @version 1.0
  * @since 01/16/18
@@ -15,7 +16,8 @@ public class Fib
 {
 
     /**
-     * Constructor of the Fib class.
+     * Constructor of the Fib class. Instantiates F(0) and F(1) of the
+     * fibonacci series.
      * @param arg0 F(0) sequence - Function of 0.
      * @param arg1 F(1) sequence - Function of 1.
      */
@@ -76,7 +78,8 @@ public class Fib
         {
             int result = fRec(n-1) + fRec(n-2);
 
-            if(!nPrinted.contains(n)){
+            if(!nPrinted.contains(n))
+            {
                 System.out.println("F(" + n + "): " + result);
             }
             nPrinted.add(n);

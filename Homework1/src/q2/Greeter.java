@@ -1,7 +1,11 @@
 package q2;
 
 /**
- A class for producing simple greetings. (Revised to include sayGoodbye)
+ * A class for producing simple greetings.
+ * either recursion or iteration.
+ * @author Alexander Florez
+ * @version 1.0
+ * @since 01/16/18
  */
 public class Greeter
 {
@@ -70,7 +74,6 @@ public class Greeter
      * Setter for current object name
      * @param name String for setting object name
      */
-
     public void setName(String name)
     {
         this.name = name;

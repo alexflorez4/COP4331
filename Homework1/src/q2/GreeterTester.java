@@ -1,5 +1,12 @@
 package q2;
 
+/**
+ * GreeterTester class, Test driver of the Greeter class.
+ * either recursion or iteration.
+ * @author Alexander Florez
+ * @version 1.0
+ * @since 01/16/18
+ */
 public class GreeterTester
 {
     /**
